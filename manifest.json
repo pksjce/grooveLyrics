@@ -1,0 +1,20 @@
+{
+  "name": "My First Extension",
+  "version": "1.0",
+  "description": "The first extension that I made.",
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": "Show Lyrics"
+  },
+  "permissions": [
+    "tabs", "http://*.grooveshark.com/*", "http://api.musixmatch.com/*"
+  ],
+  "background_page": "views/background.html",
+    "content_scripts": [
+    {
+      "matches": ["http://*.grooveshark.com/*"],
+      "js" : ["javascript/GroovesharkProxy.js","javascript/contentscripts.js", "javascript/showLyrics.js"]
+    }
+  ]
+ 
+}
